@@ -1,0 +1,15 @@
+.AddTaskForm__Input {
+    display: block;
+    width: 100%;
+    border: none;
+    height: 4rem;
+    font-size: var(--font-size);
+    font-weight: var(--regular);
+    background-color: var(--light);
+    color: var(--write-color);
+    border-radius: 0.312rem;
+    padding: 0 3.5rem 0 1.5rem;
+}
+.AddTaskForm__Input ::placeholder {
+    color: var(--text);
+}

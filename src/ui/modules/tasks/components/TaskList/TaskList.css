@@ -1,0 +1,72 @@
+.TaskList {
+  background-color: var(--light);
+  border-radius: 0.312rem;
+}
+.TaskList > div {
+    border-bottom: 1px solid var(--separator);
+    min-height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+}
+.TaskList input {
+    margin-right: 1.5rem;
+}
+.TaskList label {
+    display: inline-block;
+    color: var(--main-text);
+}
+.TaskList .labeled {
+    text-decoration: line-through;
+    color: var(--second-text);
+}
+.TaskList div.checked {
+  background: #55DDFF;
+  background: -webkit-linear-gradient(top left, #55DDFF, #C058F3);
+  background: -moz-linear-gradient(top left, #55DDFF, #C058F3);
+  background: linear-gradient(to bottom right, #55DDFF, #C058F3);
+}
+.TaskList div.checked svg {
+  height: 17px;
+  position: relative;
+  top: 3px;
+}
+.TaskList .active {
+  text-decoration: line-through;
+  color: var(--second-text);
+}
+.TaskList__buttonDelete  {
+  display: flex;
+  align-self: center;
+}
+.TaskList input[type=checkbox] {
+	display: none;
+}
+.TaskList input[type=checkbox] + label{
+  cursor:pointer;
+}
+.TaskList label:before{
+  display: block;
+  content:'';
+  background-image: url(../../../../assets/images/icon-border.svg);
+  border-radius: 50px;
+  display: inline-block;
+  height: 24px ;
+  width: 24px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.TaskList input[type=checkbox]:checked + label:before{
+  background: #55DDFF;
+  background: -webkit-linear-gradient(top left, #55DDFF, #C058F3);
+  background: -moz-linear-gradient(top left, #55DDFF, #C058F3);
+  background: linear-gradient(to bottom right, #55DDFF, #C058F3);
+}
+/* RWD */
+@media screen and (max-width: 425px) {
+  .TaskList label {
+    margin-left: 0.5rem;
+  }
+}

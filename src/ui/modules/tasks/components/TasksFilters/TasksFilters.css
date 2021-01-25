@@ -1,0 +1,40 @@
+
+.TasksFilters {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.TasksFilters li {
+    list-style: none;
+    margin-right: 1.125rem;
+}
+.TasksFilters li:last-child {
+  margin-right: 0;
+}
+.TasksFilters li a, .TasksFilters li strong {
+  color: var(--text);
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-weight: var(--bold);
+  text-transform: capitalize;
+}
+.TasksFilters li a:hover {
+  color: var(--main-text);
+}
+.darked .TasksFilters li a:hover {
+  color: var(--hover-mouse);
+}
+
+/* RWD */
+@media screen and (max-width: 580px) {
+  .TasksFilters li {
+    margin-right: 0.5rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .TasksFilters {
+    margin-bottom: 0.5rem;
+  }
+}

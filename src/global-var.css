@@ -1,0 +1,108 @@
+:root {
+  --bg: #F2F2F2;
+  --main-text: #494C6B;
+  --second-text: #D1D2DA;
+  --text: #9495A5;
+  --hover: #3A7CFD;
+  --light: #fff;
+  --separator: #E3E4F1;
+  --twitter-color: #00ACEE;
+  --linkedin-color: #0E76A8;
+  --github-color: #000;
+  --myweb-color: #ff8080;
+  --white-color: #fff;
+  --write-color: #393A4B;
+
+  --main-font: 'Josefin Sans', sans-serif;
+  --bold: 700;
+  --regular: 400;
+  --font-size: 1.125rem;
+}
+
+  body.darked {
+    --bg: #181823;
+    --main-text: #C8CBE7;
+    --second-text: #4D5067;
+    --text: #767992;
+    --hover: #3A7CFD;
+    --hover-mouse: #E3E4F1;
+    --light: #25273D;
+    --separator: #393A4B;
+    --twitter-color: #00ACEE;
+    --linkedin-color: #0E76A8;
+    --github-color: #000;
+    --myweb-color: #ff8080;
+    --white-color: #fff;
+    --write-color: #393A4B;
+  
+    --main-font: 'Josefin Sans', sans-serif;
+    --bold: 700;
+    --regular: 400;
+    --font-size: 1.125rem;
+  }
+  body.lighted {
+  --bg: #F2F2F2;
+  --main-text: #494C6B;
+  --second-text: #D1D2DA;
+  --text: #9495A5;
+  --hover: #3A7CFD;
+  --light: #fff;
+  --separator: #E3E4F1;
+  --twitter-color: #00ACEE;
+  --linkedin-color: #0E76A8;
+  --github-color: #000;
+  --myweb-color: #ff8080;
+  --white-color: #fff;
+  --write-color: #393A4B;
+
+  --main-font: 'Josefin Sans', sans-serif;
+  --bold: 700;
+  --regular: 400;
+  --font-size: 1.125rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181823;
+    --main-text: #C8CBE7;
+    --second-text: #4D5067;
+    --text: #767992;
+    --hover: #3A7CFD;
+    --hover-mouse: #E3E4F1;
+    --light: #25273D;
+    --separator: #393A4B;
+    --twitter-color: #00ACEE;
+    --linkedin-color: #0E76A8;
+    --github-color: #000;
+    --myweb-color: #ff8080;
+    --white-color: #fff;
+    --write-color: #393A4B;
+  
+    --main-font: 'Josefin Sans', sans-serif;
+    --bold: 700;
+    --regular: 400;
+    --font-size: 1.125rem;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F2F2F2;
+    --main-text: #494C6B;
+    --second-text: #D1D2DA;
+    --text: #9495A5;
+    --hover: #3A7CFD;
+    --light: #fff;
+    --separator: #E3E4F1;
+    --twitter-color: #00ACEE;
+    --linkedin-color: #0E76A8;
+    --github-color: #000;
+    --myweb-color: #ff8080;
+    --white-color: #fff;
+    --write-color: #393A4B;
+  
+    --main-font: 'Josefin Sans', sans-serif;
+    --bold: 700;
+    --regular: 400;
+    --font-size: 1.125rem;
+  }
+}

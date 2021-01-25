@@ -1,0 +1,17 @@
+.Header {
+  padding-top: 3.8rem;
+  background: url(../../../assets/images/bg-desktop-light.jpg);
+  min-height: 300px;
+  background-size: cover;
+}
+.Header .cw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.darked Header {
+  padding-top: 3.8rem;
+  background: url(../../../assets/images/bg-desktop-dark.jpg);
+  min-height: 300px;
+  background-size: cover;
+}

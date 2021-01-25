@@ -1,0 +1,20 @@
+.AddTaskForm {
+  background-color: var(--light);
+  border-radius: 0.312rem;
+  margin-bottom: 1.5rem;
+}
+.AddTaskForm__Input::placeholder {
+  color: var(--text);
+}
+.AddTaskForm__Input {
+  font-family: var(--title-second); 
+  font-weight: var(--regular);
+  color: var(--write-color);
+}
+
+.AddTaskForm__Button-submit {
+  display: none;
+}
+.darked .AddTaskForm__Input {
+  color: var(--main-text);
+}

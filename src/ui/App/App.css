@@ -1,0 +1,28 @@
+.App {
+  height: 100vh;
+  display: grid;
+  grid-template-rows:  1fr 1fr 1fr;
+  /* grid-template-rows:  320px 1fr 1fr; */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+}
+.App .Header {
+  grid-area: header;
+}
+.App main {
+  grid-area: main;
+}
+.App .Footer {
+  grid-area: footer;
+}
+.App main .cw {
+  position: relative;
+  bottom: 9.3rem;
+}
+
+
+
+
