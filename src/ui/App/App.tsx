@@ -11,16 +11,16 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <Header className="Header" />
+        <Header/>
         <main>
           <div className="cw">
           <TasksProvider>
-            <AddTaskForm /*addNewTaskToList={handleAddTask}*/  />
+            <AddTaskForm />
             <Tasks />
           </TasksProvider>
           </div>
         </main>
-        <Footer className="Footer" />
+        <Footer />
       </div>
     </ThemeProvider>
   );

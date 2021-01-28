@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import MainTitle from '../MainTitle';
 import LightDarkMode from '../../../components/LightDarkMode';
 import './Header.css';
 
-function Header({ className }) {
+const Header: React.FC = () => {
   return (
-    <header className={className}>
+    <header className="Header">
       <div className="cw">
         <MainTitle className="MainTitle">
           TODO
@@ -20,6 +18,3 @@ function Header({ className }) {
 
 export default Header;
 
-Header.propTypes = {
-  className: PropTypes.string
-};

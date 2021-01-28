@@ -22,7 +22,7 @@ const TasksFilters = () => {
   *******/
  //const [pulsedFilter, setPulsedFilter] = useState("all")
 
-  const handleFilterChange = filter => {
+  const handleFilterChange = (filter: string) => {
     filterChange(filter);
     //setPulsedFilter(filter)
   }

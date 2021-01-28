@@ -4,19 +4,15 @@ import { TaskContext } from '../../contexts/TaskContext';
 
 import './AddTaskForm.css';
 
-const AddTaskForm = () => {
-  // Guardaremos el dato del input en el estado local para trabajar con el en el submit
-  const [valueInput, setValueInput] = useState('');
-  // Uso el contexto global
+const AddTaskForm: React.FC = () => {
+  const [valueInput, setValueInput] = useState<string>('');
   const { addTaskToList } = useContext(TaskContext);
 
-  // Control del change input
-  const handleWhenValueInputChange = inputNewValue => {
+  const handleWhenValueInputChange = (inputNewValue:string) => {
     setValueInput(inputNewValue);
   };
 
-  // Control del submit: donde llamo la función addTaskToList pasandole el valor del input
-  const handleSubmit = e => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     addTaskToList(valueInput);
     setValueInput('');

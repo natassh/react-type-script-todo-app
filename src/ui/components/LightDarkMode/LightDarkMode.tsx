@@ -5,16 +5,15 @@ import iconMoon from '../../assets/images/icon-moon.svg';
 import iconSun from '../../assets/images/icon-sun.svg';
 
 function LightDarkMode() {
-  const { colorSchema, setColorSchema, changeTheme } = useContext(ThemeContext);
+  const { colorSchema, changeTheme } = useContext(ThemeContext);
   //console.log('colorSchema in Component', colorSchema)
 
   const handleOnClick = () => {
     if(colorSchema === "light") {
-      setColorSchema("dark");
+      changeTheme("dark");
     } else {
-      setColorSchema("light");
+      changeTheme("light");
     }
-    changeTheme();
   }
   return (
     <a href="#" className="LightDarkMode" onClick={handleOnClick}>

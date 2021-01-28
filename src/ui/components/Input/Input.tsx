@@ -1,11 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import './Input.css';
 
-const Input = ({ onChange, className, type, value, placeholder }) => {
+const Input: React.FC<InputProps> = ({ onChange, className, type, value, placeholder }) => {
 
-  const handleChange = e => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> ) => {
     const inputNewValue = e.target.value;
     onChange(inputNewValue);
   };
@@ -23,10 +21,11 @@ const Input = ({ onChange, className, type, value, placeholder }) => {
 
 export default Input;
 
-Input.propTypes = {
-  onChange: PropTypes.func,
-  className: PropTypes.string,
-  type: PropTypes.string,
-  value: PropTypes.string,
-  placeholder: PropTypes.string
-};
+
+type InputProps = {
+  className: string,
+  type: string,
+  value?: string,
+  placeholder?: string,
+  onChange: (value: string) => void
+}

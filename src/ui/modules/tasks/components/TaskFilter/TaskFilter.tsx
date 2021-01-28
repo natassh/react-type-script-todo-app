@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './TaskFilter.css';
-function TaskFilter({ text, onChange , isActive }) {
+
+const TaskFilter: React.FC<TaskFilterProps> = ({ text, onChange , isActive }) => {
+
   const handleClick = () => {
     onChange(text);
   }
@@ -19,7 +20,8 @@ function TaskFilter({ text, onChange , isActive }) {
 
 export default TaskFilter;
 
-TaskFilter.propTypes = {
-  text: PropTypes.string,
-  onClick: PropTypes.func
-};
+type TaskFilterProps = {
+  text: string,
+  isActive: boolean,
+  onChange: (value: string) => void
+}

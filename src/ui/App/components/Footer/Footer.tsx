@@ -2,9 +2,9 @@ import React from 'react';
 import ExternalLink from '../../../components/ExternalLink';
 import './Footer.css';
 
-function Footer({className}) {
+const Footer: React.FC = () => {
   return (
-    <footer className={className}>
+    <footer className="Footer">
       <div className="cw">
         <ul>
           <li>
@@ -42,3 +42,4 @@ function Footer({className}) {
 }
 
 export default Footer;
+
