@@ -26,7 +26,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const defaultTheme = 'dark';
   //const [colorSchema, setColorSchema] = useState<string>(getInitialState())
-  const [colorSchema, setColorSchema] = useState<string>("dark")
+  const [colorSchema, setColorSchema] = useState<string>("light")
 
 
   React.useEffect(() => { 

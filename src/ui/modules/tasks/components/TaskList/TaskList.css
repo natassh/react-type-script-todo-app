@@ -16,6 +16,7 @@
 .TaskList label {
     display: inline-block;
     color: var(--main-text);
+    position: relative;
 }
 .TaskList .labeled {
     text-decoration: line-through;
@@ -63,6 +64,18 @@
   background: -webkit-linear-gradient(top left, #55DDFF, #C058F3);
   background: -moz-linear-gradient(top left, #55DDFF, #C058F3);
   background: linear-gradient(to bottom right, #55DDFF, #C058F3);
+}
+.TaskList input[type=checkbox]:checked + label:after{
+  display: block;
+  content:"";
+  width: 13px;
+    height: 13px;
+  background-image: url(../../../../assets/images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
 }
 /* RWD */
 @media screen and (max-width: 425px) {
