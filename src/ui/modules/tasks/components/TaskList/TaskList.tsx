@@ -42,7 +42,6 @@ const TaskList = () => {
               <input 
                 type="checkbox" 
                 id={idElement} 
-                // TODO checked={task.checked ? true : false}
                 checked={task.checked}
                 onChange={() => {
                   handleChangeToCompletedTask(task)

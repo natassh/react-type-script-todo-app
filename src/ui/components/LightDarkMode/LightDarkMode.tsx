@@ -6,7 +6,6 @@ import iconSun from '../../assets/images/icon-sun.svg';
 
 function LightDarkMode() {
   const { colorSchema, changeTheme } = useContext(ThemeContext);
-  //console.log('colorSchema in Component', colorSchema)
 
   const handleOnClick = () => {
     if(colorSchema === "light") {
