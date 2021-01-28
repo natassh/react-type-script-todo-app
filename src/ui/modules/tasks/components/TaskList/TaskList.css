@@ -48,15 +48,23 @@
   cursor:pointer;
 }
 .TaskList label:before{
-  display: block;
-  content:'';
-  background-image: url(../../../../assets/images/icon-border.svg);
-  border-radius: 50px;
   display: inline-block;
+  content:'';
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
   height: 24px ;
   width: 24px;
   margin-right: 20px;
   vertical-align: middle;
+}
+.TaskList label:hover:before {
+  background: 
+    linear-gradient(var(--light),var(--light)) padding-box, /*this is your grey background*/
+    linear-gradient(to bottom right, #55DDFF, #C058F3) border-box;
+  color: #55DDFF;
+  border: 1px solid transparent;
+  border-radius:50px;
+  display:inline-block;
 }
 
 .TaskList input[type=checkbox]:checked + label:before{
@@ -64,12 +72,13 @@
   background: -webkit-linear-gradient(top left, #55DDFF, #C058F3);
   background: -moz-linear-gradient(top left, #55DDFF, #C058F3);
   background: linear-gradient(to bottom right, #55DDFF, #C058F3);
+  border: none;
 }
 .TaskList input[type=checkbox]:checked + label:after{
   display: block;
   content:"";
   width: 13px;
-    height: 13px;
+  height: 13px;
   background-image: url(../../../../assets/images/icon-check.svg);
   background-repeat: no-repeat;
   background-size: 100%;
