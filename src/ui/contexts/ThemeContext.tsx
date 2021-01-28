@@ -1,11 +1,21 @@
 import React, { createContext, useState } from 'react';
-export const ThemeContext = createContext();
 
-const ThemeProvider = props => {
+type ThemeContextProps = {
+  colorSchema: string
+  changeTheme: (theme: string) =>  void,
+}
+
+type ThemeProviderProps = {
+  children: React.ReactNode;
+}
+
+export const ThemeContext = createContext<ThemeContextProps>(undefined!);
+
+const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const getInitialState = () => {
-    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const userPrefersDark: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const userPrefersLight: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
     if(userPrefersDark){
       return "dark"
@@ -13,12 +23,15 @@ const ThemeProvider = props => {
       return "light"
     }
   };
-  const defaultTheme = 'dark';
-  const [colorSchema, setColorSchema] = useState(getInitialState())
 
-  React.useEffect(() => {
+  const defaultTheme = 'dark';
+  //const [colorSchema, setColorSchema] = useState<string>(getInitialState())
+  const [colorSchema, setColorSchema] = useState<string>("dark")
+
+
+  React.useEffect(() => { 
     changeTheme(colorSchema)
-    const preferDarkQuery = `(prefers-color-scheme: ${defaultTheme})`
+    const preferDarkQuery: string = `(prefers-color-scheme: ${defaultTheme})`
     const mediaQuery = window.matchMedia(preferDarkQuery)
     const handleChange = () => {
       setColorSchema(mediaQuery.matches ? 'dark' : 'light')
@@ -28,7 +41,7 @@ const ThemeProvider = props => {
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
  
-  const changeTheme = theme => {
+  const changeTheme = (theme: string) => {
     const body = document.body;
     if(theme === "dark") {
       body.classList.remove("lighted")
@@ -48,7 +61,7 @@ const ThemeProvider = props => {
         changeTheme,
       }}
     >
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   );
 };
