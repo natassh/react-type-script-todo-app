@@ -1,4 +1,6 @@
-.TasksMenu {
+.TasksMenu > ul {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,11 +20,12 @@
   align-items: center;
   border-radius: 0.312rem;
 }
-.TasksMenu > p {
+.TasksMenu ul > li {
   margin: 0;
   padding: 0;
   color: var(--text);
   font-size: 0.875rem;
+  list-style: none;
 }
 .TasksMenu__ClearCompleted {
   font-family: var(--title-second); 
@@ -36,6 +39,10 @@
 }
 .TasksResponsiveMenu {
   display: none;
+  
+}
+.TasksResponsiveMenu li {
+  list-style: none;
 }
 
 /* RWD */

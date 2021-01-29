@@ -14,22 +14,30 @@ const TasksMenu = () => {
 
   return (
     <>
-    <aside className="TasksMenu">
-      <p>{tasks.length} items</p>
-      <TasksFilters />
+    <nav className="TasksMenu">
+      <ul>
+        <li>
+          {tasks.length} items
+        </li>
+        <li>
+          <TasksFilters />
+        </li>
+        <li>
+          <a 
+            href="#" 
+            className="TasksMenu__ClearCompleted"
+            onClick={handleClearCompleted}  
+          >
+            Clear Completed
+          </a>
+        </li>
+      </ul>
 
-      <a 
-        href="#" 
-        className="TasksMenu__ClearCompleted"
-        onClick={handleClearCompleted}  
-      >
-        Clear Completed
-      </a>
-    </aside>
+    </nav>
 
-    <aside className="TasksResponsiveMenu">
+    <nav className="TasksResponsiveMenu">
       <TasksFilters />
-    </aside>
+    </nav>
     </>
   );
 };
