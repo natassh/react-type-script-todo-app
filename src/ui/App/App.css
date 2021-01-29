@@ -5,6 +5,11 @@
   position: relative;
   top: 10rem ;
 }
+@media screen and (max-width: 375px) {
+  .App main  {
+    top: 6.4rem ;
+  }
+}
 
 
 

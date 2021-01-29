@@ -13,3 +13,9 @@
 .AddTaskForm__Input ::placeholder {
     color: var(--text);
 }
+@media screen and (max-width: 375px) {
+    .AddTaskForm__Input {
+        height: 3rem;
+        font-size: 1.06rem;
+    }
+  }

@@ -35,4 +35,9 @@
 .Footer .myweb:hover {
   color: var(--myweb-color)
 }
+@media screen and (max-width: 375px) {
+  .Footer {
+    top: 9rem;
+  }
+}
 

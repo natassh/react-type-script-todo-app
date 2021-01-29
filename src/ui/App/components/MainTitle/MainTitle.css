@@ -7,3 +7,8 @@
     letter-spacing: 0.937rem; 
     color:var(--white-color);
 }
+@media screen and (max-width: 375px) {
+    .MainTitle {
+        font-size: 1.8rem;
+    }
+  }
