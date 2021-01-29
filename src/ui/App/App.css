@@ -1,17 +1,9 @@
 .App {
   position: relative;
 }
-.App .Header {
-  position: fixed;
-  width: 100%;
-}
 .App main  {
   position: relative;
   top: 10rem ;
-}
-.App .Footer {
-  position: relative;
-  top: 12rem;
 }
 
 

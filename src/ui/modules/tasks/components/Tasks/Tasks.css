@@ -1,3 +1,10 @@
 .Tasks {
     border-radius: 0.312rem;
+    box-shadow: var(--shadow)
+}
+@media screen and (max-width: 575px) {
+    .Tasks {
+        border-radius: 0.312rem;
+        box-shadow: none;
+    }
 }

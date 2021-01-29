@@ -49,11 +49,13 @@
 @media screen and (max-width: 575px) {
   .TasksMenu {
     margin-bottom: 2rem;
+    box-shadow: var(--shadow)
   }
   .TasksMenu .TasksFilters {
     display: none;
   }
   .TasksResponsiveMenu {
     display: flex;
+    box-shadow: var(--shadow)
   }
 }
