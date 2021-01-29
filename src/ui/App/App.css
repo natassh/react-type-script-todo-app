@@ -1,25 +1,17 @@
 .App {
-  height: 100vh;
-  display: grid;
-  grid-template-rows:  1fr 1fr 1fr;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-  "header"
-  "main"
-  "footer";
+  position: relative;
 }
 .App .Header {
-  grid-area: header;
+  position: fixed;
+  width: 100%;
 }
-.App main {
-  grid-area: main;
+.App main  {
+  position: relative;
+  top: 10rem ;
 }
 .App .Footer {
-  grid-area: footer;
-}
-.App main .cw {
   position: relative;
-  bottom: 9.3rem;
+  top: 12rem;
 }
 
 
