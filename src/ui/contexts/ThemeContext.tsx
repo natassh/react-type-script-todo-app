@@ -11,23 +11,23 @@ type ThemeProviderProps = {
 
 export const ThemeContext = createContext<ThemeContextProps>(undefined!);
 
+const getInitialState = (): string => {
+  const userPrefersDark: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const userPrefersLight: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+  if(userPrefersDark){
+    return "dark"
+  } else if(userPrefersLight) {
+    return "light"
+  }
+  return "light"
+};
+
+
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-
-  const getInitialState = () => {
-    const userPrefersDark: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const userPrefersLight: boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    if(userPrefersDark){
-      return "dark"
-    } else if(userPrefersLight) {
-      return "light"
-    }
-  };
+  const [colorSchema, setColorSchema] = useState<string>(getInitialState())
 
   const defaultTheme = 'dark';
-  //const [colorSchema, setColorSchema] = useState<string>(getInitialState())
-  const [colorSchema, setColorSchema] = useState<string>("light")
-
 
   React.useEffect(() => { 
     changeTheme(colorSchema)

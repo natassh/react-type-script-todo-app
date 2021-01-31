@@ -16,7 +16,6 @@ const TaskList = () => {
   }, []);
   
   const handleChangeToCompletedTask = (task: Task) => {
-    console.log('task: ', task)
     changeStatusTask(task);
   }
   

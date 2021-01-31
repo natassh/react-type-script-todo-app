@@ -13,7 +13,6 @@ type TaskContextProps = {
   tasks: Task[],
   getTasksFiltered: () => Task[],
   addTaskToList: (text: string) =>  void,
-  //addTaskToList: (param: string) =>  void,
   changeStatusTask: (task: Task) =>  void,
   clearCompletedTasks: () => void,
   filterChange: (text: string) =>  void,
@@ -93,7 +92,6 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
   }
 
   const deleteTask = (taskToDelete: Task) => {
-    console.log('taskToDelete: ', taskToDelete)
     const newTasks = tasks.filter(
       task => task.id !== taskToDelete.id
     );
