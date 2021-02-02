@@ -1,6 +1,7 @@
 import React, { createContext, useState} from 'react';
 import { deleteTaskAction } from './utils/deleteTaskAction';
 import { addTaskToListAction } from './utils/addTaskToListAction';
+import { clearCompletedTasksAction } from './utils/clearCompletedTasksAction';
 
 export type Task =  { 
   text: string, 
@@ -71,9 +72,7 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
 
 
   const clearCompletedTasks = () => {
-    const newTasks = tasks.filter(
-      task => task.completed === false
-    )
+    const newTasks = clearCompletedTasksAction(tasks);
     setTasks(newTasks);
     saveTasksLocalstorage(newTasks);
   }
