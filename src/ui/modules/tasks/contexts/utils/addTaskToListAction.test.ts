@@ -18,19 +18,13 @@ describe('addTaskToListAction', () => {
           completed: false, 
           checked: true, 
         };
-        const task3: Task =  { 
-          id: 2,
-          text: 'Tarea 3', 
-          active: true, 
-          completed: false, 
-          checked: true, 
-        };
 
+        const newTextTask = 'Tarea 3';
         //const tasks: Task[] = []
         const tasks: Task[] = [task1, task2]
 
         // ACT - Actuar
-        const newTasks: Task[] = addTaskToListAction(tasks, task3.text);
+        const newTasks: Task[] = addTaskToListAction(tasks, newTextTask);
         
         // Assert - Comprobar
         expect(newTasks).toHaveLength(3);

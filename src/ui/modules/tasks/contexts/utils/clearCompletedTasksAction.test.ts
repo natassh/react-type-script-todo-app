@@ -28,11 +28,42 @@ describe('clearCompletedTasksAction', () => {
 
         //const tasks: Task[] = []
         const tasks: Task[] = [task1, task2, task3]
+        const tasksExpected: Task[] = [task2, task3]
 
         // ACT - Actuar
         const newTasks: Task[] = clearCompletedTasksAction(tasks);
         
         // Assert - Comprobar
         expect(newTasks).toHaveLength(2);
+        expect(newTasks).toEqual(tasksExpected)
     })
+
+    it('should remove the original tasks when we have not a completed tasks', () => {
+      // Arrange  - Inicializa
+      const task2: Task =  { 
+        id: 2,
+        text: 'Pasear a Kira', 
+        active: true, 
+        completed: false, 
+        checked: true, 
+      };
+      const task3: Task =  { 
+        id: 2,
+        text: 'Tarea 3', 
+        active: true, 
+        completed: false, 
+        checked: true, 
+      };
+
+      //const tasks: Task[] = []
+      const tasks: Task[] = [task2, task3]
+
+      // ACT - Actuar
+      const newTasks: Task[] = clearCompletedTasksAction(tasks);
+      
+      // Assert - Comprobar
+      expect(newTasks).toHaveLength(2);
+      expect(newTasks).toEqual(tasks)
+    })
+
 })

@@ -2,6 +2,7 @@ import React, { createContext, useState} from 'react';
 import { deleteTaskAction } from './utils/deleteTaskAction';
 import { addTaskToListAction } from './utils/addTaskToListAction';
 import { clearCompletedTasksAction } from './utils/clearCompletedTasksAction';
+import { getTasksFilteredAction } from './utils/getTasksFilteredAction';
 
 export type Task =  { 
   text: string, 
@@ -81,16 +82,21 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
     setFilter(filter)
   }
 
-  const getTasksFiltered = () => {
-    let tasksFiltered = tasks;
-    if (filter === 'active') {
-      tasksFiltered = tasks.filter( task => task.active );
-    } else if (filter === 'completed') {
-      tasksFiltered = tasks.filter( task => task.completed );
-    }
+  const getTasksFiltered = () => getTasksFilteredAction(tasks, filter);
 
-    return tasksFiltered
-  }
+  //   const tasksFiltered = getTasksFilteredAction(tasks, filter);
+  // const getTasksFiltered = () => {
+  //   const tasksFiltered = getTasksFilteredAction(tasks, filter);
+  //   //console.log('tasksFiltered: ', tasksFiltered)
+  //   // let tasksFiltered = tasks;
+  //   // if (filter === 'active') {
+  //   //   tasksFiltered = tasks.filter( task => task.active );
+  //   // } else if (filter === 'completed') {
+  //   //   tasksFiltered = tasks.filter( task => task.completed );
+  //   // }
+
+  //    return tasksFiltered
+  // }
 
   const deleteTask = (taskToDelete: Task) => {
     const newTasks = deleteTaskAction(tasks, taskToDelete)
@@ -101,8 +107,10 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
   return (
     <TaskContext.Provider
       value={{
+        // tasks: tasks,
         tasks,
         filter,
+        // getTasksFiltered: () => getTasksFilteredAction(tasks, filter),
         getTasksFiltered,
         addTaskToList,
         changeStatusTask,
