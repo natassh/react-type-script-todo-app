@@ -3,7 +3,7 @@ import { TaskContext, Task } from '../../contexts/TaskContext';
 import './TaskList.css';
 import iconClose from '../../../../assets/images/icon-cross.svg';
 
-const TaskList = () => {
+const TaskList: React.FC<{}> = () => {
   const [isShown, setIsShown] = useState(false);
   const [taskHover, setTaskHover] = useState<Task>();
   const [width, setWidth] = useState<number>(0);

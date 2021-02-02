@@ -1,8 +1,21 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('App', () => {
+  window.matchMedia = window.matchMedia || function() {
+    return {
+        matches: false,
+        addEventListener : function() {},
+        removeEventListener : function() {}
+    };
+  };
+  
+
+  it('should show the text TODO', () => {
+
+    render(<App />);
+    const element = screen.getByText(/TODO/i);
+
+    expect(element).toBeInTheDocument();
+  });
+})

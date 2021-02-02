@@ -1,4 +1,5 @@
 import React, { createContext, useState} from 'react';
+import { deleteTaskAction } from './deleteTaskAction';
 
 export type Task =  { 
   text: string, 
@@ -92,9 +93,7 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
   }
 
   const deleteTask = (taskToDelete: Task) => {
-    const newTasks = tasks.filter(
-      task => task.id !== taskToDelete.id
-    );
+    const newTasks = deleteTaskAction(tasks, taskToDelete)
     setTasks(newTasks);
     saveTasksLocalstorage(newTasks);
   }

@@ -23,7 +23,6 @@ const getInitialState = (): string => {
   return "light"
 };
 
-
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [colorSchema, setColorSchema] = useState<string>(getInitialState())
 
