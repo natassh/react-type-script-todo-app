@@ -1,4 +1,4 @@
-import { Task } from './TaskContext';
+import { Task } from '../TaskContext';
 
 const deleteTaskAction = (tasks: Task[], taskToDelete:Task): Task[] => {
     const newTasks = tasks.filter(

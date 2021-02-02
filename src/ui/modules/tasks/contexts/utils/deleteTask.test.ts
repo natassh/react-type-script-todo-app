@@ -1,4 +1,4 @@
-import { Task } from './TaskContext';
+import { Task } from '../TaskContext';
 import { deleteTaskAction } from './deleteTaskAction';
 
 describe('deleteTaskAction', () => {
