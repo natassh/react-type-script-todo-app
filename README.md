@@ -21,7 +21,8 @@ Tests done with JEST, Testing Library and Cypress.
 To run the Cypress tests, we execute `npm run cypress: open`
 ### `npm run build`
 
-================================================================================================================================================================
+### Thanks
+
 👩‍💻 con ❤️ por [@natassh](https://twitter.com/natassh) 😊
 
 
