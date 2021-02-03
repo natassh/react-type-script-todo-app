@@ -3,6 +3,7 @@ import { deleteTaskAction } from './utils/deleteTaskAction';
 import { addTaskToListAction } from './utils/addTaskToListAction';
 import { clearCompletedTasksAction } from './utils/clearCompletedTasksAction';
 import { getTasksFilteredAction } from './utils/getTasksFilteredAction';
+import {getInitialState} from './getInitialState'
 
 export type Task =  { 
   text: string, 
@@ -31,11 +32,6 @@ export const TaskContext = createContext<TaskContextProps>(undefined!);
 
 const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
 
-  const getInitialState = (): Task[] => {
-    const tasks: Task[] = JSON.parse(localStorage.getItem('tasks') || '[]');
-    return tasks;
-  };
-
   const [tasks, setTasks] = useState<Task[]>(getInitialState());
   const [filter, setFilter] = useState<string>('all');
 
@@ -52,21 +48,14 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
   }
 
   const changeStatusTask = (task: Task) => {
-    // encontramos la posición de la tarea en el array
     const indexTask = tasks.findIndex(t =>  t.id === task.id );
-    // esto no es una copia del array original es una referencia
-    // const newTasks = tasks;
 
-    // creamops la copia real del array
     const newTasks = [...tasks];
 
-    // Modificamos la tarea concreta
-    // newTasks[indexTask].active = !newTasks[indexTask].active;
     newTasks[indexTask]['active'] = !newTasks[indexTask]['active'];
     newTasks[indexTask]['completed'] = !newTasks[indexTask]['completed'];
     newTasks[indexTask]['checked'] = !newTasks[indexTask]['checked'];
     
-    // seteamos el nuevo array
     setTasks(newTasks);
     saveTasksLocalstorage(newTasks);
   }
@@ -84,19 +73,6 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
 
   const getTasksFiltered = () => getTasksFilteredAction(tasks, filter);
 
-  //   const tasksFiltered = getTasksFilteredAction(tasks, filter);
-  // const getTasksFiltered = () => {
-  //   const tasksFiltered = getTasksFilteredAction(tasks, filter);
-  //   //console.log('tasksFiltered: ', tasksFiltered)
-  //   // let tasksFiltered = tasks;
-  //   // if (filter === 'active') {
-  //   //   tasksFiltered = tasks.filter( task => task.active );
-  //   // } else if (filter === 'completed') {
-  //   //   tasksFiltered = tasks.filter( task => task.completed );
-  //   // }
-
-  //    return tasksFiltered
-  // }
 
   const deleteTask = (taskToDelete: Task) => {
     const newTasks = deleteTaskAction(tasks, taskToDelete)
@@ -107,10 +83,8 @@ const TasksProvider: React.FC<TasksProviderProps> = ({ children }) => {
   return (
     <TaskContext.Provider
       value={{
-        // tasks: tasks,
         tasks,
         filter,
-        // getTasksFiltered: () => getTasksFilteredAction(tasks, filter),
         getTasksFiltered,
         addTaskToList,
         changeStatusTask,

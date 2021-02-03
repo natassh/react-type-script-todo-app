@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
 describe('App', () => {
@@ -12,9 +12,8 @@ describe('App', () => {
   
 
   it('should show the text TODO', () => {
-
-    render(<App />);
-    const element = screen.getByText(/TODO/i);
+    const { getByTestId } = render(<App />);
+    const element = getByTestId("header");
 
     expect(element).toBeInTheDocument();
   });
