@@ -23,6 +23,6 @@ To run the Cypress tests, we execute `npm run cypress: open`
 
 ### Thanks
 
-👩‍💻 con ❤️ por [@natassh](https://twitter.com/natassh) 😊
+👩‍💻 con ❤️ por [Natacha](https://www.linkedin.com/in/natacha-ivannikova-261478113/) 😊
 
 

@@ -5,28 +5,28 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 
 describe('Tasks', () => {
-  let mock: any;
+  let getInitialStateMock: any =  jest.spyOn(getInitialState, 'getInitialState');
+  const task1: Task =  { 
+    id: 1,
+    text: "Hacer la compra", 
+    active: true, 
+    completed: false, 
+    checked: true, 
+  };
+  const task2: Task =  { 
+    id: 2,
+    text: 'Pasear a Kira', 
+    active: false, 
+    completed: true, 
+    checked: false, 
+  };
+  const tasks: Task[] = [task1, task2];
+
+  beforeEach(() => {
+    getInitialStateMock.mockReturnValue(tasks);
+  })
+  
   it('should show the tasks', () => {
-    mock = jest.spyOn(getInitialState, 'getInitialState');
-    const task1: Task =  { 
-      id: 1,
-      text: "Hacer la compra", 
-      active: true, 
-      completed: false, 
-      checked: true, 
-    };
-    const task2: Task =  { 
-      id: 2,
-      text: 'Pasear a Kira', 
-      active: false, 
-      completed: true, 
-      checked: false, 
-    };
-
-    const tasks: Task[] = [task1, task2]
-
-    mock.mockReturnValue(tasks);
-
     //Inicialización
     const totalItems = '2 items';
 
@@ -40,26 +40,6 @@ describe('Tasks', () => {
 
 
   it('should show the active tasks', () => {
-    mock = jest.spyOn(getInitialState, 'getInitialState');
-    const task1: Task =  { 
-        id: 1,
-        text: "Hacer la compra", 
-        active: true, 
-        completed: false, 
-        checked: true, 
-    };
-    const task2: Task =  { 
-        id: 2,
-        text: 'Pasear a Kira', 
-        active: false, 
-        completed: true, 
-        checked: false, 
-    };
-
-    const tasks: Task[] = [task1, task2]
-
-    mock.mockReturnValue(tasks);
-    
     //Inicialización
     const totalItems = '2 items';
 
