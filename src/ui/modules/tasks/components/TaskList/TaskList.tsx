@@ -30,7 +30,7 @@ const TaskList: React.FC<{}> = () => {
   }
 
   return (
-    <form className="TaskList">
+    <div className="TaskList">
       {tasks.map((task: Task)   => {
         const idElement = task.id.toString();
         return (
@@ -81,7 +81,7 @@ const TaskList: React.FC<{}> = () => {
           </div>
         );
       })}
-    </form>
+    </div>
   );
 };
 

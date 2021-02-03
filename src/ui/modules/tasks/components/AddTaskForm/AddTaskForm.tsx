@@ -20,14 +20,15 @@ const AddTaskForm: React.FC = () => {
 
   return (
     <form className="AddTaskForm" onSubmit={handleSubmit}>
-      <Input 
+      <Input
+        title="Create a new todo"
         onChange={handleWhenValueInputChange} 
         className="AddTaskForm__Input"
         type="text"
         value={valueInput}
         placeholder = "Create a new todo..."
        />
-       <button type="submit" className="AddTaskForm__Button-submit"/>
+       <button type="submit" className="AddTaskForm__Button-submit" title="Submit"/>
     </form>
   );
 };
