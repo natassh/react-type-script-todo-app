@@ -17,6 +17,7 @@ const TaskList: React.FC<{}> = () => {
   
   const handleChangeToCompletedTask = (task: Task) => {
     changeStatusTask(task);
+    setIsShown(false)
   }
   
   const handleDeleteTask = (task: Task) => {
